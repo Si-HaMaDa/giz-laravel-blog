@@ -22,3 +22,22 @@ Route::get('/', function () {
 Route::get('users', function () {
     return view('users');
 });
+
+Route::get('db', function () {
+    // $users = DB::select('select * from users');
+
+    User::create([
+        'name' => 'lara',
+        'email' => 'mail@lara.com',
+        'password' => 'pass'
+    ]);
+
+
+    $users = User::all();
+
+    // return json_encode($users);
+
+    dd($users);
+
+    echo 'Hi!';
+});
