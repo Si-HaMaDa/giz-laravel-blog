@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Blog;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
@@ -26,18 +27,26 @@ Route::get('users', function () {
 Route::get('db', function () {
     // $users = DB::select('select * from users');
 
-    User::create([
-        'name' => 'lara',
-        'email' => 'mail@lara.com',
-        'password' => 'pass'
-    ]);
+    // User::create([
+    //     'name' => 'lara',
+    //     'email' => 'mail@lara.com',
+    //     'password' => 'pass'
+    // ]);
 
 
-    $users = User::all();
+    // $users = User::all();
 
     // return json_encode($users);
 
-    dd($users);
+    // dd($users);
+
+    // $user = User::factory()->create();
+
+    // dd($user);
+
+    $blog = Blog::factory(10)->create();
+
+    dd($blog);
 
     echo 'Hi!';
 });
